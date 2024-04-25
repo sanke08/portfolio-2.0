@@ -5,8 +5,8 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    {/* <Suspense> */}
+    <Suspense>
     <App />
-    {/* </Suspense> */}
+    </Suspense>
   </React.StrictMode>,
 )
