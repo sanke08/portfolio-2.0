@@ -71,6 +71,7 @@ const Projects = () => {
 
     useEffect(() => {
         const timeout = setTimeout(() => {
+            if (!ref.current) return
             ref.current.style.opacity = "1"
         }, 3000);
         return () => clearTimeout(timeout)
@@ -107,6 +108,7 @@ interface Props {
 const Card = ({ item, index }: Props) => {
 
     const ref = useRef<HTMLDivElement | null>(null)
+
     useEffect(() => {
         const timeout = setTimeout(() => {
             if (!ref.current) return
@@ -118,22 +120,25 @@ const Card = ({ item, index }: Props) => {
 
 
     return (
-        <a href={`${item.href}`} ref={ref} target="_blank" className=" opacity-0 transition-all translate-y-80 duration-1000 delay-500 scale-[0.1]">
-            <div className=' w-full h-full flex flex-col justify-between p-2 rounded-xl'>
-                {
-                    item.img ?
-                        <img src={item.img} alt='' className=' h-40 rounded-xl object-cover bg-black' />
-                        :
-                        <p className=' h-40 flex justify-center items-center' >
-                            {item.desc}
-                        </p>
-                }
-                <p className='font-medium'>
-                    {item.name}
-                </p>
-                <p className=' text-xs text-neutral-700'>{item.techs} </p>
-            </div>
-        </a>
+        <div ref={ref} className=" w-fit h-fit">
+
+            <a href={`${item.href}`} target="_blank" className=" opacity-0 transition-all translate-y-80 duration-1000 delay-500 scale-[0.1]">
+                <div className=' w-full h-full flex flex-col justify-between p-2 rounded-xl'>
+                    {
+                        item.img ?
+                            <img src={item.img} alt='' className=' h-40 rounded-xl object-cover bg-black' />
+                            :
+                            <p className=' h-40 flex justify-center items-center' >
+                                {item.desc}
+                            </p>
+                    }
+                    <p className='font-medium'>
+                        {item.name}
+                    </p>
+                    <p className=' text-xs text-neutral-700'>{item.techs} </p>
+                </div>
+            </a>
+        </div>
 
     )
 }

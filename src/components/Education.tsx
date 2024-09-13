@@ -2,8 +2,9 @@
 import Title from "./Title"
 import TimeLine from "./TimeLine"
 import { twMerge } from "tailwind-merge"
+import { LegacyRef } from "react"
 
-const Education = ({ eduRef }) => {
+const Education = ({ eduRef }: { eduRef: LegacyRef<HTMLDivElement> }) => {
     return (
         <>
             <div ref={eduRef} className=" border-2 mt-4 translate-y-1/4 opacity-0 transition-all duration-1000 rounded-lg p-5">
@@ -18,7 +19,7 @@ const Education = ({ eduRef }) => {
                                     <p className=" capitalize text-wrap text-sm">{edu.college} </p>
                                     <TimeLine startDate={edu.startDate} endDate={edu.endDate} />
                                 </div>
-                                    <p>{edu.marks}</p>
+                                <p>{edu.marks}</p>
                             </div>
                         ))
                     }

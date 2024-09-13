@@ -1,9 +1,10 @@
 import Title from "./Title"
 import { CssIcon, ExpressIcon, GitIcon, HtmlIcon, JavascriptIcon, MongodbIcon, NextIcon, NodeIcon, PrismalIcon, ReactIcon, TailwindIcon, TypeScriptlIcon } from "../assets/indes"
+import { LegacyRef } from "react"
 
 
 
-const Skills = ({skillRef}) => {
+const Skills = ({skillRef}:{skillRef:LegacyRef<HTMLDivElement>}) => {
   return (
     <div ref={skillRef} className=" transition-all sm:-translate-x-1/2 ease-out sm:opacity-0 mt-4 w-full sm:w-max h-max sticky top-4 duration-1000 border-2 py-5 px-4 rounded-lg">
     <Title>Skills</Title>
