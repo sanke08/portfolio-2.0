@@ -1,5 +1,8 @@
+import { useEffect, useRef } from "react"
+import Title from "./Title"
 
 const Projects = () => {
+    const ref = useRef<HTMLDivElement | null>(null)
     const items = [
         {
             name: "Companion.ai",
@@ -36,8 +39,13 @@ const Projects = () => {
             img: "/Images/5.jpg",
             desc: ""
         },
-    ]
-    const oItems = [
+        {
+            name: "Social Media",
+            techs: "React, Nextjs, Mongodb, NodeJS,",
+            href: "https://github.com/sanke08/Social",
+            img: "/Images/8.jpeg",
+            desc: ""
+        },
         {
             name: "Crypto",
             techs: "React, HTML, CSS, javascript",
@@ -59,29 +67,22 @@ const Projects = () => {
             desc: "Movie app (frontend)",
             img: "",
         },
-        {
-            name: "Social Media",
-            techs: "React, Nextjs, Mongodb, NodeJS,",
-            href: "https://github.com/sanke08/Social",
-            img: "/Images/8.jpeg",
-            desc: ""
-        },
     ]
 
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            ref.current.style.opacity = "1"
+        }, 3000);
+        return () => clearTimeout(timeout)
+    }, [])
+
+
     return (
-        <div id='projects' className=' w-full  h-screen md:py-20 py-10 hidescrollbar snap-center overflow-scroll '>
-            <p className='w-max mx-auto bg-gradient-to-r text-2xl py-10'>My Projects</p>
-            <div className=' w-full px-5 md:px-20 grid  md:grid-cols-5 gap-5 py-2 pb-10'>
+        <div ref={ref} className=" opacity-0 transition-all mt-4 duration-1000 delay-500 rounded-xl border-2 p-6 py-3">
+            <Title>Projects</Title>
+            <div className=' w-full grid md:grid-cols-2 gap-5'>
                 {
                     items.map((item, index) => (
-                        <Card key={index} index={index} item={item} />
-                    ))
-                }
-            </div>
-            <p className='px-5 md:px-20 font-bold'>Basic</p>
-            <div className=' w-full px-5 md:px-20 grid md:grid-cols-7 grid-cols-2 gap-5 py-3'>
-                {
-                    oItems.map((item, index) => (
                         <Card key={index} index={index} item={item} />
                     ))
                 }
@@ -103,10 +104,22 @@ interface Props {
     index: number
 }
 
-const Card = ({ item, }: Props) => {
+const Card = ({ item, index }: Props) => {
+
+    const ref = useRef<HTMLDivElement | null>(null)
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            if (!ref.current) return
+            ref.current.style.opacity = "1"
+            ref.current.style.transform = "scale(1) translate(0)"
+        }, 3000);
+        return () => clearTimeout(timeout);
+    }, [index])
+
+
     return (
-        <a href={`${item.href}`} target="_blank" >
-            <div className=' w-full h-full flex flex-col justify-between border border-neutral-400 shadow p-4 rounded-xl  backdrop-blur-lg'>
+        <a href={`${item.href}`} ref={ref} target="_blank" className=" opacity-0 transition-all translate-y-80 duration-1000 delay-500 scale-[0.1]">
+            <div className=' w-full h-full flex flex-col justify-between p-2 rounded-xl'>
                 {
                     item.img ?
                         <img src={item.img} alt='' className=' h-40 rounded-xl object-cover bg-black' />
@@ -115,10 +128,10 @@ const Card = ({ item, }: Props) => {
                             {item.desc}
                         </p>
                 }
-                <p className=' text-lg font-medium'>
+                <p className='font-medium'>
                     {item.name}
                 </p>
-                <p className=' text-sm text-neutral-700'>{item.techs} </p>
+                <p className=' text-xs text-neutral-700'>{item.techs} </p>
             </div>
         </a>
 
