@@ -8,7 +8,7 @@ const Projects = () => {
             name: "Companion.ai",
             techs: "Nextjs, PrismaORM , TailwindCSS, Express, Node, Generative Ai",
             href: "https://github.com/sanke08/companion-ai",
-            img: "/Images/Images.png",
+            img: "/Images/Images.jpg",
             desc: ""
         },
         {
@@ -120,9 +120,8 @@ const Card = ({ item, index }: Props) => {
 
 
     return (
-        <div ref={ref} className=" w-fit h-fit">
-
-            <a href={`${item.href}`} target="_blank" className=" opacity-0 transition-all translate-y-80 duration-1000 delay-500 scale-[0.1]">
+        <div ref={ref} className=" opacity-0 transition-all translate-y-80 duration-1000 delay-500 scale-[0.1]">
+            <a href={`${item.href}`} target="_blank" >
                 <div className=' w-full h-full flex flex-col justify-between p-2 rounded-xl'>
                     {
                         item.img ?
