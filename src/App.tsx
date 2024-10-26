@@ -43,7 +43,7 @@ const App = () => {
       introRef.current.style.translate = `0%`
       introRef.current.style.transform = `scale(1)`
       introRef.current.style.top = `0px`
-      introRef.current.style.left = `${linkRef.current.offsetWidth + 16}px`
+      introRef.current.style.left = `${linkRef.current.offsetWidth + 12}px`
       introRef.current.style.backgroundColor = "rgba(255, 251 ,235, 0.8)"
       introRef.current.style.color = "black"
 
