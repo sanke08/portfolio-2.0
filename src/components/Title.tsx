@@ -1,8 +1,9 @@
+import { twMerge } from "tailwind-merge"
 
 
-const Title = ({ children }: { children: React.ReactNode }) => {
+const Title = ({ children ,className}: { children: React.ReactNode,className?:string }) => {
     return (
-        <p className="text-xl font-bold pb-1 mb-3 border-b-2">
+        <p className={twMerge(" text-2xl w-1/3",className)}>
             {children}
         </p>
     )

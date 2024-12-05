@@ -1,10 +1,18 @@
-import { LegacyRef } from "react"
+import SocialLink from "./SocialLink"
+import Title from "./Title"
 
-const Intro = ({ introRef }:{introRef:LegacyRef<HTMLDivElement>}) => {
+const Intro = ({ handleMouseEnter }: { handleMouseEnter: (e: React.MouseEvent<HTMLDivElement>) => void }) => {
+
+
   return (
-    <div ref={introRef} className=" transition-all scale-[0.01] duration-1000 ease-out top-[40vh] left-1/2 bg-neutral-800 text-white border-2 px-6 p-3 border-neutral-500 rounded-lg w-fit absolute">
-      <p className="  w-max md:text-2xl text-xl">Sanket Gawande</p> 
-      <p className=" w-max text-sm font-semibold">MERN stack developer</p>
+    <div className=" h-screen w-full  py-20 snap-center">
+      <div className=" flex justify-end flex-col h-1/2">
+        <Title className={" min-w-max"}>SANKET GAWANDE</Title>
+        <p> <span onMouseEnter={handleMouseEnter} className=" border-b border-rose-400 z-50">MERN</span> Stack Developer</p>
+      </div>
+      <div className=" h-1/2 w-full flex justify-end">
+      <SocialLink handleMouseEnter={handleMouseEnter} />
+      </div>
     </div>
   )
 }

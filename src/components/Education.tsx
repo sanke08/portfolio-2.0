@@ -1,8 +1,7 @@
 
-import Title from "./Title"
 import TimeLine from "./TimeLine"
 import { twMerge } from "tailwind-merge"
-import { LegacyRef } from "react"
+import Title from "./Title"
 
 
 const Edu = [
@@ -30,15 +29,14 @@ const Edu = [
 
 ]
 
-const Education = ({ eduRef }: { eduRef: LegacyRef<HTMLDivElement> }) => {
+const Education = ({ handleMouseEnter }: { handleMouseEnter: (e: React.MouseEvent<HTMLDivElement>) => void }) => {
     return (
-        <div ref={eduRef} className=" border-2 mt-4 translate-y-1/4 opacity-0 transition-all duration-1000 rounded-lg p-5">
-            <Title>Education</Title>
-            <div className=" space-y-4">
-
+        <div  className=" sm:flex space-y-4 justify-between  min-h-[60vh] items-center snap-center">
+            <Title>EDUCATION</Title>
+            <div className="grid sm:grid-cols-2 w-3/4 gap-8 h-fit ">
                 {
                     Edu.map((edu, i) => (
-                        < div key={edu.marks} className={twMerge("border-neutral-400/40 border-dashed", i !== 2 && "border-b-2 pb-4")}>
+                        < div onMouseEnter={handleMouseEnter} key={edu.marks} className={twMerge("border-neutral-400/40 border-dashed p-2 ", i == 0? " border border-neutral-400 rounded-lg md:col-span-2 w-fit":"border-b")}>
                             <p className=" text w-max font-bold">{edu.field}</p>
                             <div className="flex justify-between items-end">
                                 <div>

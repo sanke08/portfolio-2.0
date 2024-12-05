@@ -1,15 +1,18 @@
-import Title from "./Title"
 import TimeLine from "./TimeLine"
-import { LegacyRef } from "react"
+import Title from "./Title"
 
 
-const Experience = ({ expRef }: { expRef: LegacyRef<HTMLDivElement> }) => {
+const Experience = ({ handleMouseEnter }: { handleMouseEnter: (e: React.MouseEvent<HTMLDivElement>) => void }) => {
     return (
-        <div ref={expRef} className=" h-max translate-y-1/3 mt-4 opacity-0 w-full ease-out transition-all sm:duration-1000 p-6 py-3 border-2 rounded-lg">
-            <Title>Experience</Title>
-            <p className=" font-bold min-w-max">Full Stack Developer Intern</p>
-            <p className=" text-sm">Spinovix Software Pvt. Ltd</p>
-            <TimeLine startDate="May 2024" endDate="Present" />
+        <div className=" min-h-[30vh] h-max sm:flex space-y-4 items-center justify-between snap-center">
+            <Title>EXPERIENCE</Title>
+            <div className=" w-3/4">
+            <div onMouseEnter={handleMouseEnter} className=" w-fit p-3 py-2">
+                <p className=" font-bold min-w-max">Full Stack Developer Intern</p>
+                <p className=" text-sm">Spinovix Software Pvt. Ltd</p>
+                <TimeLine startDate="May 2024" endDate="Present" />
+            </div>
+            </div>
         </div>
     )
 }
