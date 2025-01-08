@@ -25,7 +25,7 @@ const App = () => {
 
 
   return (
-    <div className=" h-full w-full text-neutral-700 md:px-40 px-6">
+    <div className=" h-full w-full text-neutral-700 md:px-60 px-6">
       <AnimateBall ref={ballRef} />
       <Intro handleMouseEnter={handleMouseEnter} />
       <Skills handleMouseEnter={handleMouseEnter} />

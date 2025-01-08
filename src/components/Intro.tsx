@@ -5,7 +5,7 @@ const Intro = ({ handleMouseEnter }: { handleMouseEnter: (e: React.MouseEvent<HT
 
 
   return (
-    <div className=" h-screen w-full  py-20 snap-center">
+    <div className=" h-screen w-full py-20 snap-center">
       <div className=" flex justify-end flex-col h-1/2">
         <Title className={" min-w-max"}>SANKET GAWANDE</Title>
         <p> <span onMouseEnter={handleMouseEnter} className=" border-b border-rose-400 z-50">MERN</span> Stack Developer</p>

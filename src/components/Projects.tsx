@@ -1,9 +1,10 @@
+import Title from "./Title"
 
 const Projects = ({ handleMouseEnter }: { handleMouseEnter: (e: React.MouseEvent<HTMLDivElement>) => void }) => {
 
     return (
         <div className="min-h-screen md:flex space-y-4 justify-between items-center  py-20 snap-center">
-            <p className=" text-2xl w-1/3">PROJECTS</p>
+            <Title>Projects</Title>
             <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:w-4/5 w-full gap-8'>
                 {
                     items.map((item, index) => (

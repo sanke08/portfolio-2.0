@@ -7,7 +7,7 @@ import { CssIcon, ExpressIcon, GitIcon, HtmlIcon, JavascriptIcon, MongodbIcon, N
 const Skills = ({ handleMouseEnter }: { handleMouseEnter: (e: React.MouseEvent<HTMLDivElement>) => void }) => {
   return (
     <div className="sm:min-h-[70vh] min-h-[80vh] sm:flex space-y-4 justify-between items-center snap-center">
-      <p className=" align-middle text-2xl w-1/3">SKILLS</p>
+      <p className=" align-middle text-2xl w-1/4">SKILLS</p>
       <div className=" sm:w-3/4 w-full h-fit gap-y-16 grid grid-cols-3 md:grid-cols-5 ">
         {
           skills.map((skill) => (
