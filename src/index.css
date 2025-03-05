@@ -10,3 +10,7 @@ html {
 .hidescrollbar::-webkit-scrollbar {
     display: none;
 }
+
+* {
+    @apply border-neutral-500/20
+}

@@ -1,23 +1,24 @@
 
-import { CssIcon, ExpressIcon, GitIcon, HtmlIcon, JavascriptIcon, MongodbIcon, NextIcon, NodeIcon, PrismalIcon, ReactIcon, TailwindIcon, TypeScriptlIcon } from "../assets/indes"
 
-
-
-
-const Skills = ({ handleMouseEnter }: { handleMouseEnter: (e: React.MouseEvent<HTMLDivElement>) => void }) => {
+const Skills = () => {
   return (
-    <div className="sm:min-h-[70vh] min-h-[80vh] sm:flex space-y-4 justify-between items-center snap-center">
-      <p className=" align-middle text-2xl w-1/4">SKILLS</p>
-      <div className=" sm:w-3/4 w-full h-fit gap-y-16 grid grid-cols-3 md:grid-cols-5 ">
-        {
-          skills.map((skill) => (
-            <div key={skill.name} onMouseEnter={handleMouseEnter} className=" w-fit h-fit">
-              <skill.icon />
-            </div>
-          ))
-        }
+
+    <section id="skills">
+      <div className="flex flex-col gap-y-3">
+        <h2 className="text-xl font-bold">Skills</h2>
+        <div className="flex flex-wrap gap-1">
+          {
+            skills.map((skill) => (
+              <div key={skill.name} className=" text-xs font-semibold shadow-md rounded-md px-2 py-0.5">
+                {skill.name}
+              </div>
+
+            ))
+          }
+        </div>
       </div>
-    </div>
+
+    </section>
   )
 }
 
@@ -27,16 +28,16 @@ export default Skills
 
 
 const skills = [
-  { name: "HTML", icon: HtmlIcon },
-  { name: "CSS", icon: CssIcon },
-  { name: "Javascript", icon: JavascriptIcon },
-  { name: "React", icon: ReactIcon },
-  { name: "Nextjs", icon: NextIcon },
-  { name: "Express", icon: ExpressIcon },
-  { name: "Typescript", icon: TypeScriptlIcon },
-  { name: "Mongodb", icon: MongodbIcon },
-  { name: "Node", icon: NodeIcon },
-  { name: "git", icon: GitIcon },
-  { name: "Tailwind", icon: TailwindIcon },
-  { name: "Prisma", icon: PrismalIcon },
+  { name: "HTML" },
+  { name: "CSS" },
+  { name: "Javascript" },
+  { name: "React" },
+  { name: "Nextjs" },
+  { name: "Express" },
+  { name: "Typescript" },
+  { name: "Mongodb" },
+  { name: "Node" },
+  { name: "git" },
+  { name: "Tailwind" },
+  { name: "Prisma" },
 ]

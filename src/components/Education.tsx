@@ -1,15 +1,11 @@
-
 import TimeLine from "./TimeLine"
-import { twMerge } from "tailwind-merge"
-import Title from "./Title"
-
 
 const Edu = [
     {
         field: "B.tech Computer Science Engineering",
         college: "Gayakwad collge of Engineering and technology",
         marks: "8.4 CGPA",
-        startDate: "Nov 2022",
+        startDate: "2022",
         endDate: "Present"
     },
     {
@@ -29,27 +25,39 @@ const Edu = [
 
 ]
 
-const Education = ({ handleMouseEnter }: { handleMouseEnter: (e: React.MouseEvent<HTMLDivElement>) => void }) => {
+const Education = () => {
     return (
-        <div  className=" sm:flex space-y-4 justify-between  min-h-[60vh] items-center snap-center">
-            <Title>EDUCATION</Title>
-            <div className="grid sm:grid-cols-2 w-3/4 gap-8 h-fit ">
+        <section id="education">
+            <div className="flex flex-col gap-y-3">
+                <h2 className="text-xl font-bold">Education</h2>
                 {
-                    Edu.map((edu, i) => (
-                        < div onMouseEnter={handleMouseEnter} key={edu.marks} className={twMerge("border-neutral-400/40 border-dashed p-2 ", i == 0? " border border-neutral-400 rounded-lg md:col-span-2 w-fit":"border-b")}>
-                            <p className=" text w-max font-bold">{edu.field}</p>
-                            <div className="flex justify-between items-end">
-                                <div>
-                                    <p className=" capitalize text-wrap text-sm">{edu.college} </p>
-                                    <TimeLine startDate={edu.startDate} endDate={edu.endDate} />
+                    Edu.map((item, i) => (
+
+                        <div className="rounded-lg flex pb-1" key={i}>
+                            <div className=" md:size-10 size-8 aspect-square border rounded-full flex justify-center items-center">
+                                {item.college[0]}
+                            </div>
+                            <div className="flex-grow ml-4 items-center flex-col group">
+                                <div className="flex flex-col">
+                                    <div className="flex items-center justify-between gap-x-4 text-base" >
+                                        <h3 className="items-center justify-center leading-3 font-semibold text-xs sm:text-sm" >
+                                            {item.college}
+                                        </h3>
+                                        <div className="text-xs sm:text-sm text-right" >
+                                            <TimeLine startDate={item.startDate} endDate={item.endDate} />
+                                        </div>
+                                    </div>
+                                    <div className="font-sans text-xs">{item.field}</div>
                                 </div>
-                                <p className=" text-nowrap">{edu.marks}</p>
                             </div>
                         </div>
+
                     ))
                 }
             </div>
-        </div>
+        </section>
+
+
     )
 }
 

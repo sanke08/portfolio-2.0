@@ -1,24 +1,36 @@
-import { twMerge } from "tailwind-merge"
 import TimeLine from "./TimeLine"
-import Title from "./Title"
 
 
-const Experience = ({ handleMouseEnter }: { handleMouseEnter: (e: React.MouseEvent<HTMLDivElement>) => void }) => {
+const Experience = () => {
     return (
-        <div className=" min-h-[30vh] h-max sm:flex space-y-4 items-center justify-between snap-center">
-            <Title>EXPERIENCE</Title>
-            <div className=" w-3/4 flex gap-4">
+
+        <section id="work">
+            <div className="flex flex-col gap-y-3">
+                <h2 className="text-xl font-bold">Work Experience</h2>
                 {
-                    data.map((item,i) => (
-                        <div onMouseEnter={handleMouseEnter} className={twMerge(" w-fit px-4 space-y-1 py-2 shrink-0",i===0&&"border rounded-lg border-dashed border-neutral-400")}>
-                            <p className=" font-bold min-w-max">{item.title}</p>
-                            <p className=" text-sm">{item.company}</p>
-                            <TimeLine startDate={item.start} endDate={item.end} />
+                    data.map((item, i) => (
+                        <div key={i} className="rounded-lg bg-card text-card-foreground flex items-center pb-1">
+                            <p className="flex rounded-full border md:size-10  size-8 justify-center items-center" >
+                                {item.company[0]}
+                            </p >
+                            <div className="flex-grow ml-4 items-center flex-col group">
+                                <div className="flex flex-col">
+                                    <div className="flex items-center justify-between gap-x-4 text-base" >
+                                        <h3 className=" items-center justify-center font-semibold leading-none text-xs sm:text-sm" >
+                                            {item.company}
+                                        </h3>
+                                        <div className="text-xs sm:text-sm text-right" >
+                                            <TimeLine startDate={item.start} endDate={item.end} />
+                                        </div>
+                                    </div>
+                                    <div className="font-sans text-xs">{item.title}</div>
+                                </div>
+                            </div>
                         </div>
                     ))
                 }
             </div>
-        </div>
+        </section>
     )
 }
 
