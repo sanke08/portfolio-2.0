@@ -29,7 +29,7 @@ const Floating = () => {
     }
     return (
         <>
-            <div className={`w-full h-screen fixed top-0 left-0 z-20 dark:bg-white/10 bg-black/10 transition-all  ${bluring ? "backdrop-blur-sm z-20" : "-z-10"} `} />
+            <div className={`w-full h-screen fixed top-0 left-0 z-20 dark:bg-white/10 bg-black/10 transition-all  ${bluring ? "backdrop-blur-sm z-20" : "-z-20"} `} />
 
             <div className=" flex gap-x-4 border-2 border-neutral-400   dark:border-neutral-500 transition-all duration-300 w-fit p-2 px-4 rounded-full items-center fixed bottom-6 left-1/2 -translate-x-1/2 backdrop-blur-sm">
                 <div className=" flex justify-center w-7 h-7 p-1 hover:w-10 transition-all">
