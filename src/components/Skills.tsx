@@ -9,7 +9,7 @@ const Skills = () => {
         <div className="flex flex-wrap gap-1">
           {
             skills.map((skill) => (
-              <div key={skill.name} className=" text-xs font-semibold shadow-md rounded-md px-2 py-0.5">
+              <div key={skill.name} className=" text-xs font-semibold  px-2 py-0.5">
                 {skill.name}
               </div>
 
