@@ -37,7 +37,6 @@ interface Props {
         techs: string[]
         git?: string
         live?: string
-        img: string
         desc: string
     }
 }
@@ -115,7 +114,6 @@ const items = [
         name: "Component lib",
         techs: ["React.js", "Nextjs", "TailwindCSS"],
         live: "https://my-ui-gules.vercel.app/",
-        img: "/Images/Images.jpg",
         desc: "I’m building a reusable component for personal use, but I’m designing it to be general enough for anyone to use."
     },
     {
@@ -123,7 +121,6 @@ const items = [
         techs: ["React.js", "Nextjs", "PrismaORM", "TailwindCSS", "Express", "Node", "Generative Ai"],
         git: "https://github.com/sanke08/companion-ai",
         live: "https://companion-ai-inky.vercel.app/",
-        img: "/Images/Images.jpg",
         desc: "Built an AI companion website for real-time user interaction. Integrated advanced AI for personalized responses. Designed for a smooth and engaging user experience."
     },
     {
@@ -131,7 +128,6 @@ const items = [
         techs: ["Nextjs", "Prisma", "Socket-io", "TailwindCSS", "Express", "Node", "Kafka", " Redis"],
         git: "https://github.com/sanke08/discord-clone.git",
         live: "",
-        img: "/Images/3.jpg",
         desc: "Built a Discord-inspired platform with real-time messagingt. Implemented authentication, servers, and channel management. Optimized for smooth and reliable communication."
     },
     {
@@ -139,7 +135,6 @@ const items = [
         techs: ["Nextjs", "PrismaORM", "Socket-io", "TailwindCSS", "Express", "Node"],
         git: "https://github.com/sanke08/team-work-management/tree/master",
         live: "",
-        img: "/Images/5.jpg",
         desc: "Built a task management app with boards. Added team collaboration, task assignments, and progress tracking. Optimized for productivity and ease of use."
     },
     {
@@ -147,7 +142,6 @@ const items = [
         techs: ["Nextjs", "MongoDB", "React", "TailwindCSS", "Express"],
         git: "https://github.com/sanke08/airbnb-clone",
         live: "https://otelbnb.vercel.app/",
-        img: "/Images/10.jpg",
         desc: "Developed a vacation rental platform with property listings and booking features. Integrated user authentication, and reviews. Designed for a seamless travel experience."
     },
     {
@@ -155,7 +149,6 @@ const items = [
         techs: ["React", "Nextjs", "Mongodb", "Node"],
         git: "https://github.com/sanke08/Social",
         live: "",
-        img: "/Images/8.jpeg",
         desc: "Created a social media platform for real-time sharing. Implemented user feeds, follow systems, and media uploads. Designed for fast and interactive engagement."
     },
     {
@@ -163,7 +156,6 @@ const items = [
         techs: ["Nextjs", "MongoDB", "TailwindCSS", "Redux"],
         git: "https://github.com/sanke08/player.git",
         live: "",
-        img: "/Images/4.jpg",
         desc: "Developed a music streaming app. Integrated user authentication, search, and playback features. Designed for a smooth and immersive listening experience."
     },
     {
@@ -171,7 +163,6 @@ const items = [
         techs: ["React", "HTML", "CSS", "javascript"],
         git: " https://github.com/sanke08",
         live: "",
-        img: "",
         desc: ""
     },
     {
@@ -179,7 +170,6 @@ const items = [
         techs: ["Node", "Express"],
         git: " https://github.com/sanke08/movie-api.git",
         live: "",
-        img: "",
         desc: ""
     },
     {
@@ -188,6 +178,5 @@ const items = [
         git: "https://github.com/sanke08/movie-frontend-2.0.git",
         live: "",
         desc: "Movie app (frontend)",
-        img: "",
     },
 ]
