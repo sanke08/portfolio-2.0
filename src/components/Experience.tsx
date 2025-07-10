@@ -40,10 +40,22 @@ export default Experience
 
 const data = [
     {
+        title: "Frontend Engineer Intern",
+        company: "Spinovix Software Pvt. Ltd",
+        start: "Jul 2025",
+        end: "Present",
+    },
+    {
+        title: "Frontend Engineer Intern",
+        company: "Loopins Social",
+        start: "Apr 2025",
+        end: "Jun 2025",
+    },
+    {
         title: "Web Developer Intern",
         company: "Unifins IT Hub Pvt. Ltd",
         start: "Dec 2024",
-        end: "Present",
+        end: "Apr 2025",
     },
     {
         title: "Full Stack Developer Intern",
